@@ -1,0 +1,13 @@
+{
+  "name": "botbase",
+  "version": "1.0.0",
+  "main": "src/bot.ts",
+  "repository": "https://github.com/dada513/botcommander",
+  "author": "dada513",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "libcommander": "1.0.0"
+  }
+}

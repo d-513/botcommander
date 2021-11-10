@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "workspaces": [
+    "libcommander",
+    "botbase"
+  ],
+  "license": "MIT"
+}
