@@ -1,0 +1,4 @@
+{
+  "watch": "ts",
+  "exec": "ts-node src/bot.ts"
+}

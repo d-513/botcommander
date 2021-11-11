@@ -10,7 +10,8 @@
     "start": "node tsc_output/bot.js",
     "dev": "nodemon"
   },
-  "private": false,
+  "$comment": "botbase shouldnt be published to npm",
+  "private": true,
   "dependencies": {
     "concurrently": "^6.3.0",
     "dotenv": "^10.0.0",

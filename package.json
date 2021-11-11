@@ -1,8 +1,7 @@
 {
+  "name": "root",
   "private": true,
-  "workspaces": [
-    "libcommander",
-    "botbase-ts"
-  ],
-  "license": "MIT"
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
 }
