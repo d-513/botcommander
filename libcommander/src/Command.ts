@@ -4,5 +4,6 @@ type executeFunction = (interaction: Interaction) => Promise<void>;
 
 export class Command {
   data: SlashCommandBuilder;
+  guildId?: string;
   execute: executeFunction;
 }

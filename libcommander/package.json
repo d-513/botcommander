@@ -2,15 +2,20 @@
   "name": "libcommander",
   "version": "1.0.0",
   "description": "Library for botcommander",
-  "main": "src/index.ts",
+  "main": "tsc_output/lib.js",
+  "module": "tsc_output/lib.js",
+  "types": "tsc_output/lib.d.ts",
   "repository": "https://github.com/dada513/botcommander",
   "author": "dada513",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
     "@types/node": "^16.11.7",
     "ts-auto-guard": "^1.0.0-alpha.27",
-    "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {

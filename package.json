@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [
     "libcommander",
-    "botbase"
+    "botbase-ts"
   ],
   "license": "MIT"
 }
