@@ -1,4 +1,4 @@
-<center> <img src="https://github.com/dada513/BotCommander/blob/master/logo.png" /> </center>
+<img align="center" src="https://github.com/dada513/BotCommander/blob/master/logo.png" />
 
 
 Solid base for building discord bots.
