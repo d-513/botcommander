@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Client } = require("@botcommanderjs/libcommander");
 const path = require("path");
-
+//
 const bot = new Client(
   { intents: ["GUILD_INTEGRATIONS", "GUILDS", "GUILD_MEMBERS"] },
   {
