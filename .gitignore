@@ -3,3 +3,4 @@ tsc_output
 yarn-error.log
 .env
 docs/types
+tmp
