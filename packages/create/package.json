@@ -1,6 +1,6 @@
 {
   "name": "@botcommanderjs/create",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffold botcommander bot quickly",
   "main": "index.ts",
   "repository": "https://github.com/dada513/botcommander",
