@@ -15,7 +15,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
-
+    - name: Cache Node modules
+      id: cache-npm
+      uses: actions/cache@v2
+      with:
+        path: |
+          docs/node_modules
+          packages/libcommander/node_modules
+        key: ${{ runner.os }}-nodemodules
     - name: Build docs
       working-directory: docs
       run: | 
@@ -25,7 +32,7 @@ jobs:
       working-directory: packages/libcommander/
       run: |
         yarn
-        yarn build
+        yarn doc
     - name: move to common dir structure
       run: |
         mkdir tmp
