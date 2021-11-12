@@ -1,0 +1,10 @@
+{
+  "name": "@botcommanderjs/create",
+  "version": "1.0.0",
+  "description": "Scaffold botcommander bot quickly",
+  "main": "index.ts",
+  "repository": "https://github.com/dada513/botcommander",
+  "author": "dada513",
+  "license": "MIT",
+  "private": false
+}

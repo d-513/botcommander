@@ -1,5 +1,9 @@
+---
+title: Introduction
+---
+
 <p align="center">
-  <img src="https://github.com/dada513/BotCommander/blob/master/logo.png" />
+  <img src="https://raw.githubusercontent.com/dada513/BotCommander/master/logo.png" />
 </p>
 
 Solid base for building discord bots.
@@ -11,3 +15,7 @@ discord.js-commando was abandoned, leaving bot developers to create their own cu
 ### About
 
 BotCommander is a Typescript-based framework/library for building discord bots. It features slash commands and discord.js
+
+### Getting started
+
+Please see [the guide](https://botcommander.d513.space/guide/getting-started)

@@ -15,5 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "vuepress-theme-yuu": "^3.1.1"
   }
 }
