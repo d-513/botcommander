@@ -1,0 +1,36 @@
+name: Build docs
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Build docs
+      working-directory: docs
+      run: yarn build
+    - name: build typedoc
+      working-directory: packages/libcommander/
+      run: yarn doc
+    - name: move to common dir structure
+      run: |
+        mkdir tmp
+        mv docs/.vuepress/dist tmp
+        mkdir tmp/types
+        mv docs/types tmp/types
+    - name: deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: tmp # The folder the action should deploy.
+    
