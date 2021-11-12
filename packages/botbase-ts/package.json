@@ -1,6 +1,6 @@
 {
   "name": "@botcommanderjs/botbase-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/bot.ts",
   "repository": "https://github.com/dada513/botcommander",
   "author": "dada513",
@@ -12,7 +12,7 @@
   },
   "private": false,
   "dependencies": {
-    "@botcommanderjs/libcommander": "^1.0.1",
+    "@botcommanderjs/libcommander": "^1.0.2",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0"
   },

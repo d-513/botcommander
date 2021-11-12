@@ -1,6 +1,6 @@
 {
   "name": "@botcommanderjs/libcommander",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for botcommander",
   "main": "tsc_output/lib.js",
   "module": "tsc_output/lib.js",
