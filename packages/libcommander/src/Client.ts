@@ -3,10 +3,7 @@ import fs from "fs-extra";
 import map from "p-map";
 import { Command } from "./lib";
 import { REST } from "@discordjs/rest";
-import {
-  Routes,
-  RESTPostAPIApplicationCommandsJSONBody,
-} from "discord-api-types/v9";
+import { Routes } from "discord-api-types/v9";
 import { CommanderOptions } from "./CommanderOptions";
 
 export class Client extends Discord.Client {
@@ -28,12 +25,15 @@ export class Client extends Discord.Client {
   }
 
   async loadCommands(commandDir: string) {
-    let commands = await fs.readdir(`${commandDir}`);
-    commands = commands.filter(
+    let commandFiles = await fs.readdir(commandDir);
+    commandFiles = commandFiles.filter(
       (command) => command.endsWith(".js") || command.endsWith(".ts")
     );
-    await map(commandDir, async (command) => {
-      this.commands.push(await import(`${commandDir}${command}`));
+    await map(commandFiles, async (command) => {
+      const CommandClass = await import(`${commandDir}/${command}`);
+      const commandInst = new CommandClass.default();
+      console.log(`Loaded ${command}`);
+      this.commands.push(commandInst);
     });
   }
 
@@ -44,7 +44,7 @@ export class Client extends Discord.Client {
   }
 
   private async refreshSlash(
-    commands: RESTPostAPIApplicationCommandsJSONBody[],
+    commands: Discord.ApplicationCommandData[],
     guildId?: string
   ) {
     if (guildId) {
@@ -60,20 +60,20 @@ export class Client extends Discord.Client {
   }
 
   public registerCommands() {
-    const commands: RESTPostAPIApplicationCommandsJSONBody[] = [];
+    const commands: Discord.ApplicationCommandData[] = [];
 
     this.commands.forEach((command) => {
-      commands.push(command.data.toJSON());
+      commands.push(command.data);
     });
 
     return this.refreshSlash(commands);
   }
 
   public registerCommandsForGuild(guildId: string) {
-    const commands: RESTPostAPIApplicationCommandsJSONBody[] = [];
+    const commands: Discord.ApplicationCommandData[] = [];
 
     this.commands.forEach((command) => {
-      commands.push(command.data.toJSON());
+      commands.push(command.data);
     });
 
     return this.refreshSlash(commands, guildId);

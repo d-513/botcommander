@@ -1,9 +1,10 @@
-import { SlashCommandBuilder } from "@discordjs/builders";
+import { ApplicationCommandData } from "discord.js";
 import { Interaction } from "discord.js";
-type executeFunction = (interaction: Interaction) => Promise<void>;
 
-export class Command {
-  data: SlashCommandBuilder;
+export abstract class Command {
+  // data: SlashCommandBuilder;
+  data: ApplicationCommandData;
   guildId?: string;
-  execute: executeFunction;
+
+  abstract execute(interaction: Interaction): Promise<void>;
 }

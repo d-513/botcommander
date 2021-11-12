@@ -1,4 +1,5 @@
 {
-  "watch": "ts",
-  "exec": "ts-node src/bot.ts"
+  "watch": "src",
+  "exec": "ts-node src/bot.ts",
+  "ext": "ts"
 }

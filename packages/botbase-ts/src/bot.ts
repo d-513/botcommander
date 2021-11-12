@@ -30,10 +30,12 @@ const bot = new Client({ intents: ["GUILD_INTEGRATIONS"] }, options);
 
 async function Main() {
   await bot.loadCommands(path.join(__dirname, "commands"));
-  await bot.registerCommands();
+  // await bot.registerCommands();
   //   For dev & testing use guild based!
-  //   await bot.registerCommandsForGuild("123467")
+  await bot.registerCommandsForGuild("854329902320975904");
   bot.startCommandListener();
+
+  bot.login();
 }
 
 Main();
