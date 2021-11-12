@@ -6,5 +6,8 @@
   "repository": "https://github.com/dada513/botcommander",
   "author": "dada513",
   "license": "MIT",
-  "private": false
+  "private": true,
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
