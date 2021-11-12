@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  checks:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,4 +37,4 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
 
           ./node_modules/.bin/lerna version --conventional-commits --yes
-          ./node_modules/.bin/lerna publish --yes
+          ./node_modules/.bin/lerna publish from-git --yes
