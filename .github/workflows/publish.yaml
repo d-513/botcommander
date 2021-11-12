@@ -33,8 +33,8 @@ jobs:
 
       - name: "Version and publish" # Interesting step
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor}}@users.noreply.github.com"
+          git config user.name "Octocat"
+          git config user.email "octocat@github.com"
 
           ./node_modules/.bin/lerna version --conventional-commits --yes
           ./node_modules/.bin/lerna publish  --yes
