@@ -1,7 +1,6 @@
-name: PR checks
+name: Publish
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push: [master]
 
 jobs:
   checks:
@@ -29,3 +28,11 @@ jobs:
 
       - name: Run TSC Build # Run tests of all packages
         run: ./node_modules/.bin/lerna run build
+
+      - name: "Version and publish" # Interesting step
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor}}@users.noreply.github.com"
+
+          ./node_modules/.bin/lerna version --conventional-commits --yes
+          ./node_modules/.bin/lerna publish --yes
