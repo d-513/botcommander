@@ -1,4 +1,4 @@
-# Botcommander
+[botcommander](https://github.com/dada513/BotCommander/blob/master/logo.png)
 
 Solid base for building discord bots.
 
