@@ -4,3 +4,4 @@ yarn-error.log
 .env
 docs/types
 tmp
+tsconfig.tsbuildinfo
