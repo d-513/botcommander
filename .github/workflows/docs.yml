@@ -18,10 +18,14 @@ jobs:
 
     - name: Build docs
       working-directory: docs
-      run: yarn build
+      run: | 
+        yarn
+        yarn build
     - name: build typedoc
       working-directory: packages/libcommander/
-      run: yarn doc
+      run: |
+        yarn
+        yarn build
     - name: move to common dir structure
       run: |
         mkdir tmp
