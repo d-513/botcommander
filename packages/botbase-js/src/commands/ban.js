@@ -1,8 +1,8 @@
-import { Command } from "@botcommanderjs/libcommander";
-import { CommandInteraction } from "discord.js";
-import path from "path";
+const { Command } = require("@botcommanderjs/libcommander");
+const { CommandInteraction } = require("discord.js");
+const path = require("path");
 console.log(`${path.basename(__filename)} loaded`);
-export default class BanCommand extends Command {
+module.exports = class BanCommand extends Command {
   constructor() {
     super();
     this.permissionRequired = "BAN_MEMBERS";
@@ -28,7 +28,10 @@ export default class BanCommand extends Command {
     };
   }
 
-  public async execute(interaction: CommandInteraction) {
+  /**
+   * @param {CommandInteraction} interaction
+   */
+  async execute(interaction) {
     if (!interaction.inCachedGuild()) return;
 
     const authorMember = interaction.member;
@@ -55,4 +58,4 @@ export default class BanCommand extends Command {
 
     return interaction.reply(`Done, banned ${userToBan.tag}`);
   }
-}
+};

@@ -1,0 +1,19 @@
+{
+  "name": "botcommander",
+  "version": "0.0.1",
+  "description": "Typescript-ready framework for creating Discord bots",
+  "main": "index.js",
+  "authors": {
+    "name": "dada513",
+    "email": ""
+  },
+  "repository": "https://github.com/dada513/botcommander/botcommander",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}

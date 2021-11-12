@@ -2,3 +2,4 @@ node_modules
 tsc_output
 yarn-error.log
 .env
+docs/types

@@ -2,7 +2,11 @@
   BotCommander Typescript template
   MIT licensed
 */
-import { Client, CommanderOptions, areValidOptions } from "libcommander";
+import {
+  Client,
+  CommanderOptions,
+  areValidOptions,
+} from "@botcommanderjs/libcommander";
 import dotenv from "dotenv";
 import path from "path";
 
@@ -26,16 +30,26 @@ if (!areValidOptions(optionsUnsafe)) {
 }
 
 const options: CommanderOptions = optionsUnsafe;
-const bot = new Client({ intents: ["GUILD_INTEGRATIONS"] }, options);
+const bot = new Client(
+  { intents: ["GUILD_INTEGRATIONS", "GUILDS", "GUILD_MEMBERS"] },
+  options
+);
 
-async function Main() {
+async function main() {
   await bot.loadCommands(path.join(__dirname, "commands"));
-  // await bot.registerCommands();
-  //   For dev & testing use guild based!
-  await bot.registerCommandsForGuild("854329902320975904");
+
+  if (process.env.DEVMODE && process.env.TEST_GUILD_ID) {
+    await bot.registerCommandsForGuild(process.env.TEST_GUILD_ID);
+  } else {
+    await bot.registerCommands();
+  }
+  // await bot.purgeCommands(process.env.TEST_GUILD_ID);
+  bot.once("ready", () => {
+    console.log(`Discord logged in as user ${bot?.user?.tag}`);
+  });
   bot.startCommandListener();
 
   bot.login();
 }
 
-Main();
+main();

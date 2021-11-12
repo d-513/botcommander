@@ -32,12 +32,13 @@ export class Client extends Discord.Client {
     await map(commandFiles, async (command) => {
       const CommandClass = await import(`${commandDir}/${command}`);
       const commandInst = new CommandClass.default();
-      console.log(`Loaded ${command}`);
+
       this.commands.push(commandInst);
     });
   }
 
   private async fetchBotOwner() {
+    if (!this.ownerId) return;
     const owner = await this.users.fetch(this.ownerId).catch(() => {});
     if (!owner) return;
     this.botOwner = owner;
@@ -79,19 +80,54 @@ export class Client extends Discord.Client {
     return this.refreshSlash(commands, guildId);
   }
 
+  public purgeCommands(guildId?: string) {
+    if (guildId) {
+      return this.slashRest.put(
+        Routes.applicationGuildCommands(this.clientId, guildId),
+        { body: {} }
+      );
+    } else {
+      return this.slashRest.put(Routes.applicationCommands(this.clientId), {
+        body: {},
+      });
+    }
+  }
+
   public startCommandListener() {
-    this.on("interactionCreate", (interaction) => {
+    this.on("interactionCreate", async (interaction) => {
       if (!interaction.isCommand()) return;
       const command = this.commands.find(
         (cmd) => cmd.data.name === interaction.commandName
       );
       if (!command) return;
-      command.execute(interaction).catch((err) => {
-        interaction.reply(
-          `An error has occured: ${err}.` + this.botOwner
-            ? `Please contact ${this.botOwner.tag}`
-            : ""
+      if (command.permissionRequired) {
+        const member = await interaction.guild?.members.fetch(
+          interaction.user.id
         );
+
+        if (!member?.permissions.has(command.permissionRequired)) {
+          return interaction.reply({
+            content: `You need the ${command.permissionRequired} permission to use this command.`,
+            ephemeral: true,
+          });
+        }
+      }
+      if (command.evalPermissions) {
+        const hasPermissions = await command.evalPermissions(interaction);
+        if (!hasPermissions)
+          return interaction.reply({
+            content: "You don't have permission to use this command!",
+            ephemeral: true,
+          });
+      }
+      command.execute(interaction).catch((err) => {
+        let str = "An error has occured";
+        if (this.botOwner && this.botOwner.tag) {
+          str += `\nPlease contact ${this.botOwner.tag} with the following information: ${err}`;
+        } else {
+          str += `\n${err}`;
+        }
+        return interaction.reply({ content: str, ephemeral: true });
       });
     });
   }

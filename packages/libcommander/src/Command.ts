@@ -1,10 +1,14 @@
-import { ApplicationCommandData } from "discord.js";
-import { Interaction } from "discord.js";
+import {
+  ApplicationCommandData,
+  CommandInteraction,
+  PermissionString,
+} from "discord.js";
 
 export abstract class Command {
-  // data: SlashCommandBuilder;
   data: ApplicationCommandData;
   guildId?: string;
+  permissionRequired?: PermissionString;
 
-  abstract execute(interaction: Interaction): Promise<void>;
+  evalPermissions?(interaction: CommandInteraction): Promise<boolean>;
+  public abstract execute(interaction: CommandInteraction): Promise<void>;
 }

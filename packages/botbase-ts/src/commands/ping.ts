@@ -1,7 +1,7 @@
-import { Command } from "libcommander";
+import { Command } from "@botcommanderjs/libcommander";
 import { CommandInteraction } from "discord.js";
-import { SlashCommandBuilder } from "@discordjs/builders";
-
+import path from "path";
+console.log(`${path.basename(__filename)} loaded`);
 export default class PingCommand extends Command {
   constructor() {
     super();
