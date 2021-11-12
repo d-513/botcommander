@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/dada513/botcommander/compare/v1.0.3...v1.0.4) (2021-11-12)
+
+
+### Bug Fixes
+
+* **ci:** make it obvious it is commited by ci ([95e9bac](https://github.com/dada513/botcommander/commit/95e9bac0c9f12892adf6a88a30600a6eb194fa1c))
+
+
+
+
+
 ## [1.0.3](https://github.com/dada513/botcommander/compare/v1.0.2...v1.0.3) (2021-11-12)
 
 
