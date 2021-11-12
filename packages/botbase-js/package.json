@@ -14,5 +14,6 @@
     "@botcommanderjs/libcommander": "^1.0.1",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0"
-  }
+  },
+  "gitHead": "f435ab0bbd120f9bac682228f9fbb5df6d510d61"
 }

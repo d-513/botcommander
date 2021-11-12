@@ -27,5 +27,6 @@
     "discord.js": "^13.3.1",
     "fs-extra": "^10.0.0",
     "p-map": "4.0.0"
-  }
+  },
+  "gitHead": "f435ab0bbd120f9bac682228f9fbb5df6d510d61"
 }
