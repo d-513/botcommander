@@ -2,12 +2,27 @@
   "name": "@botcommanderjs/create",
   "version": "1.0.1",
   "description": "Scaffold botcommander bot quickly",
-  "main": "index.ts",
+  "main": "tsc_output/index.js",
+  "types": "tsc_output/index.d.ts",
   "repository": "https://github.com/dada513/botcommander",
   "author": "dada513",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node index.ts"
+  },
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.0",
+    "npm-pkg-downloader": "^1.0.1",
+    "ora": "5.4.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.1.3",
+    "@types/node": "^16.11.7"
+  },
+  "bin": {
+    "create-botcommander-app": "./bin/entry.js"
   }
 }
