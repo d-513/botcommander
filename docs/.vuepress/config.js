@@ -34,7 +34,7 @@ module.exports = {
   themeConfig: {
     yuu: {
       defaultDarkTheme: true,
-      defaultColorTheme: "blue",
+      // defaultColorTheme: "green",
     },
     repo: "https://github.com/dada513/botcommander",
     editLinks: false,
@@ -42,6 +42,10 @@ module.exports = {
     editLinkText: "",
     lastUpdated: false,
     nav: [
+      {
+        text: "Home",
+        link: "/",
+      },
       {
         text: "Guide",
         link: "/guide/",
@@ -55,7 +59,26 @@ module.exports = {
         link: "https://discord.js.org",
       },
     ],
-    sidebar: [],
+    sidebar: [
+      {
+        title: "Guide",
+        sidebarDepth: 3,
+        path: "/guide/",
+        collapsable: false,
+        children: [
+          {
+            title: "Creating your bot",
+            collapsable: false,
+            path: "/guide/creating-bot/",
+            children: [
+              "/guide/creating-bot/",
+              "/guide/creating-bot/setup.md",
+              "/guide/creating-bot/commands.md",
+            ],
+          },
+        ],
+      },
+    ],
   },
 
   /**

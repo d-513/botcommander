@@ -100,8 +100,6 @@ async function main() {
     fs.appendFile("./.create-botcommander.log", init.stdout);
     fs.appendFile("./.create-botcommander.log", init.stderr);
   }
-  spinner.stop();
-  info(`Using ${data.npmClient}`);
   spinner.color = "green";
   spinner.text = "Downloading dependencies";
   spinner.start();
