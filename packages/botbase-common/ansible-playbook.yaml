@@ -1,0 +1,16 @@
+- hosts: deploy
+  remote_user: root
+
+  tasks:
+    - name: ensure directory exists
+      file:
+        path: ./bot-name
+        state: directory
+    - name: copy compose file
+      copy:
+        src: ./docker-compose.yml
+        dest: ./bot-name/docker-compose.yml
+    - name: start container
+      community.docker.docker_compose:
+        project_src: bot-name
+        pull: true

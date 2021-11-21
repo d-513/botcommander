@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node tsc_output/bot.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "prepublishOnly": "cp ../botbase-common/. . -r"
   },
   "private": false,
   "dependencies": {

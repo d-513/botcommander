@@ -6,8 +6,10 @@
   "author": "dada513",
   "license": "MIT",
   "scripts": {
-    "start": "src/bot.js",
-    "dev": "nodemon src/bot.js"
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js",
+    "build": "echo \"Build is not configured for this package\"",
+    "prepublishOnly": "cp ../botbase-common/. . -r"
   },
   "private": false,
   "dependencies": {
@@ -15,5 +17,8 @@
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0"
   },
-  "gitHead": "f435ab0bbd120f9bac682228f9fbb5df6d510d61"
+  "gitHead": "f435ab0bbd120f9bac682228f9fbb5df6d510d61",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }

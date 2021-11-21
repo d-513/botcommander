@@ -5,3 +5,20 @@ yarn-error.log
 docs/types
 tmp
 tsconfig.tsbuildinfo
+
+# Ignore files from botbase-common that are copied over
+packages/botbase-js/.env.example
+packages/botbase-js/ansible-playbook.yaml
+packages/botbase-js/docker-compose.yml
+packages/botbase-js/yarn.lock
+packages/botbase-js/.env.example
+packages/botbase-js/.dockerignore
+packages/botbase-js/Dockerfile
+
+packages/botbase-ts/.env.example
+packages/botbase-ts/ansible-playbook.yaml
+packages/botbase-ts/docker-compose.yml
+packages/botbase-ts/yarn.lock
+packages/botbase-ts/.dockerignore
+packages/botbase-ts/.env.example
+packages/botbase-ts/Dockerfile
