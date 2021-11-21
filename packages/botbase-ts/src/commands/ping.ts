@@ -1,10 +1,16 @@
 import { Command } from "@botcommanderjs/libcommander";
-import { CommandInteraction } from "discord.js";
+import {
+  ApplicationCommandData,
+  CommandInteraction,
+  PermissionString,
+} from "discord.js";
 import path from "path";
 console.log(`${path.basename(__filename)} loaded`);
-export default class PingCommand extends Command {
+export default class PingCommand implements Command {
+  data: ApplicationCommandData;
+  guildId?: string;
+  permissionRequired?: PermissionString;
   constructor() {
-    super();
     this.data = {
       name: "ping",
       description: "checks the bot ping",

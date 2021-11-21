@@ -5,10 +5,12 @@ import {
 } from "discord.js";
 
 export abstract class Command {
-  data: ApplicationCommandData;
-  guildId?: string;
-  permissionRequired?: PermissionString;
+  public abstract data: ApplicationCommandData;
+  public abstract guildId?: string;
+  public abstract permissionRequired?: PermissionString;
 
-  evalPermissions?(interaction: CommandInteraction): Promise<boolean>;
+  public abstract evalPermissions?(
+    interaction: CommandInteraction
+  ): Promise<boolean>;
   public abstract execute(interaction: CommandInteraction): Promise<void>;
 }
