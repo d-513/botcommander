@@ -1,16 +1,10 @@
 import { Command } from "@botcommanderjs/libcommander";
-import {
-  ApplicationCommandData,
-  CommandInteraction,
-  PermissionString,
-} from "discord.js";
+import { CommandInteraction } from "discord.js";
 import path from "path";
 console.log(`${path.basename(__filename)} loaded`);
-export default class BanCommand implements Command {
-  data: ApplicationCommandData;
-  guildId?: string;
-  permissionRequired?: PermissionString;
+export default class BanCommand extends Command {
   constructor() {
+    super();
     this.permissionRequired = "BAN_MEMBERS";
     this.data = {
       name: "ban",
