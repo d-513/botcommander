@@ -2,6 +2,9 @@
   <img src="https://raw.githubusercontent.com/dada513/BotCommander/master/logo.png" />
 </p>
 
+# IN DEVELOPMENT
+
+
 Solid base for building discord bots.
 
 ### Why?
