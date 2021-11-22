@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dada513/BotCommander/master/logo.png" />
+  <img src="https://raw.githubusercontent.com/dada513/BotCommander/master/logos/logo-banner.png" />
 </p>
 
 Solid base for building discord bots.

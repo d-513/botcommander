@@ -30,13 +30,10 @@ module.exports = {
    *
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
-  theme: "yuu",
+  theme: "default-prefers-color-scheme",
   themeConfig: {
-    yuu: {
-      defaultDarkTheme: true,
-      // defaultColorTheme: "green",
-    },
     repo: "https://github.com/dada513/botcommander",
+    prefersTheme: "dark",
     editLinks: false,
     docsDir: "",
     editLinkText: "",
@@ -87,6 +84,6 @@ module.exports = {
   plugins: [
     "@vuepress/plugin-back-to-top",
     "@vuepress/plugin-medium-zoom",
-    "vuepress-plugin-auto-sidebar",
+    "tabs",
   ],
 };
