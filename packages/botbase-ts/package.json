@@ -13,6 +13,7 @@
   },
   "private": false,
   "dependencies": {
+    "@botcommanderjs/langmanager": "^1.0.0",
     "@botcommanderjs/libcommander": "^1.0.2",
     "discord.js": "^13.3.1",
     "dotenv": "^10.0.0"
