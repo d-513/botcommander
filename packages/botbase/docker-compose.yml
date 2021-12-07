@@ -1,0 +1,6 @@
+version: "3.5"
+
+services:
+  economya-adp:
+    image: dock.packet.delivery/dada513/bot-name
+    environment:

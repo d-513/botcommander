@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://raw.githubusercontent.com/dada513/BotCommander/master/logo.png
+heroImage: https://raw.githubusercontent.com/dada513/BotCommander/master/logos/logo-banner.png
 tagline: Typescript-ready framework for creating Discord bots
 actionText: Quick Start →
 actionLink: /guide/
