@@ -10,7 +10,6 @@ interface Answers {
   dir: string;
   name: string;
   author?: string | null;
-  lang: "TypeScript" | "JavaScript";
   useGit: boolean;
   npmClient: "npm" | "yarn";
   confirm: boolean;
@@ -50,12 +49,6 @@ async function main() {
       message: "your name",
     },
     {
-      type: "list",
-      name: "lang",
-      message: "what language to use?",
-      choices: ["JavaScript", "TypeScript"],
-    },
-    {
       type: "confirm",
       name: "useGit",
       message: "use Git Versioning?",
@@ -85,10 +78,7 @@ async function main() {
   );
   const spinner = ora("Downloading template...").start();
 
-  await downloadPackage(
-    `@botcommanderjs/botbase-${data.lang === "TypeScript" ? "ts" : "js"}`,
-    data.dir
-  );
+  await downloadPackage(`@botcommanderjs/botbase`, data.dir);
   const execOpts = { cwd: data.dir };
   let gitRemote = null;
   if (data.useGit) {
