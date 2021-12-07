@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/dada513/botcommander/compare/v1.2.0...v1.2.1) (2021-12-07)
+
+
+### Reverts
+
+* Revert "make command implemented in botbase-ts instead of being  extended (better type experience)" ([887c5ee](https://github.com/dada513/botcommander/commit/887c5eed78d61e298e9082b0057075883685624e))
+
+
+
+
+
 # [1.2.0](https://github.com/dada513/botcommander/compare/v1.1.0...v1.2.0) (2021-11-14)
 
 

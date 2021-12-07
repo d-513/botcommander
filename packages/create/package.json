@@ -1,6 +1,6 @@
 {
   "name": "@botcommanderjs/create",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Scaffold botcommander bot quickly",
   "main": "tsc_output/index.js",
   "types": "tsc_output/index.d.ts",

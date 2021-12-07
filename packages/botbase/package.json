@@ -1,6 +1,6 @@
 {
   "name": "@botcommanderjs/botbase",
-  "version": "1.0.2",
+  "version": "1.2.1",
   "main": "src/bot.ts",
   "repository": "https://github.com/dada513/botcommander",
   "author": "dada513",
